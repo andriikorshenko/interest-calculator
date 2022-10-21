@@ -12,7 +12,7 @@ namespace InterestCalculator.Models
         public DateTime AgreementDate { get; set; }
 
         [Required]
-        [Range(1, 6, ErrorMessage = "The numbers should be between 1 and 5 years")]
+        [Range(1, 6, ErrorMessage = "The numbers should be between 1 and 6 years")]
         public double Period { get; set; }
 
         [Required]
