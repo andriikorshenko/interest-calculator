@@ -1,12 +1,11 @@
-﻿using InterestCalculator.Models;
+﻿using InterestCalculator.Logic;
+using InterestCalculator.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InterestCalculator.Controllers
 {
     public class HomeController : Controller
-    {
-        private const double TOTAL_MONTHS_IN_A_YEAR = 12;
-
+    {  
         [Route("")]
         [HttpGet]
         public IActionResult Input()
@@ -22,27 +21,9 @@ namespace InterestCalculator.Controllers
             {
                 return View(calculator);
             }
-            
-            double totalMonths = calculator.Period * TOTAL_MONTHS_IN_A_YEAR;
-            double restBody = calculator.InvestmentAmount;
-            double bodyFixedPayment = calculator.InvestmentAmount / totalMonths;
-            double totalInterest = restBody / totalMonths * calculator.InterestRate / 100;
 
-            for (int i = 0; i < totalMonths - 1; i++)
-            {
-                restBody = restBody - bodyFixedPayment;
-                totalInterest += restBody / totalMonths * calculator.InterestRate / 100;
-            }
-
-            var cwm = new CalculatorViewModel()
-            {
-                Period = totalMonths,
-                InterestRate = calculator.InterestRate,
-                InvestmentAmount = calculator.InvestmentAmount,
-                TotalInterest = totalInterest
-            };
-
-            return RedirectToAction("Output", cwm);
+            return RedirectToAction("Output", 
+                new AnnuityCalculation(calculator).Calculate());
         }
 
         [HttpGet]

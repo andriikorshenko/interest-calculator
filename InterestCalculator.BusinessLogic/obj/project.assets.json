@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\xxx\\interest-calculator\\InterestCalculator\\InterestCalculator.csproj",
-      "projectName": "InterestCalculator",
-      "projectPath": "C:\\Users\\user\\Desktop\\xxx\\interest-calculator\\InterestCalculator\\InterestCalculator.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\xxx\\interest-calculator\\InterestCalculator.BusinessLogic\\InterestCalculator.BusinessLogic.csproj",
+      "projectName": "InterestCalculator.BusinessLogic",
+      "projectPath": "C:\\Users\\user\\Desktop\\xxx\\interest-calculator\\InterestCalculator.BusinessLogic\\InterestCalculator.BusinessLogic.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\xxx\\interest-calculator\\InterestCalculator\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\xxx\\interest-calculator\\InterestCalculator.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -57,9 +57,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
