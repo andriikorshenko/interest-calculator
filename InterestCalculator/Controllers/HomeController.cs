@@ -25,14 +25,13 @@ namespace InterestCalculator.Controllers
             
             double totalMonths = calculator.Period * TOTAL_MONTHS_IN_A_YEAR;
             double restBody = calculator.InvestmentAmount;
-            double bodyFixedPayment = default;
-            double totalInterest = default;
+            double bodyFixedPayment = calculator.InvestmentAmount / totalMonths;
+            double totalInterest = restBody / totalMonths * calculator.InterestRate / 100;
 
-            for (int i = 0; i < totalMonths; i++)
+            for (int i = 0; i < totalMonths - 1; i++)
             {
                 restBody = restBody - bodyFixedPayment;
-                totalInterest += (restBody - bodyFixedPayment) / totalMonths * calculator.InterestRate / 100;
-                bodyFixedPayment = calculator.InvestmentAmount / totalMonths;
+                totalInterest += restBody / totalMonths * calculator.InterestRate / 100;
             }
 
             var cwm = new CalculatorViewModel()
