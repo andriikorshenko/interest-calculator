@@ -1,0 +1,43 @@
+﻿@model Calculator
+
+@{
+    ViewData["Title"] = "Input";
+}
+
+<form method="post">
+    <fieldset>
+        <legend>Enter your data</legend>
+        <p>            
+            <label asp-for="AgreementDate"></label>
+            <input asp-for="AgreementDate" type="date">
+            <span asp-validation-for="AgreementDate" class="text-danger"></span>
+        </p>
+        <p>
+            <label asp-for="Period"></label>
+            <select asp-for="Period">
+                <option value="1">1 year</option>
+                <option value="2">2 years</option>
+                <option value="3">3 years</option>
+                <option value="4">4 years</option>
+                <option value="5">5 years</option>
+                <option value="6">6 years</option>
+            </select>
+        </p>
+        <p>
+            <label asp-for="InvestmentAmount"></label>
+            <input asp-for="InvestmentAmount" type="number">
+            <span asp-validation-for="InvestmentAmount" class="text-danger"></span>
+        </p>
+        <p>
+            <label asp-for="InterestRate"></label>
+            <input asp-for="InterestRate" type="number">
+            <span asp-validation-for="InterestRate" class="text-danger"></span>
+        </p>
+    </fieldset>
+    <button type="submit">Calculate</button>
+    <button type="reset">Reset</button>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

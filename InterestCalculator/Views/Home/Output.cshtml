@@ -1,0 +1,16 @@
+﻿@model CalculatorViewModel
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<fieldset>
+    <legend>Output result</legend>
+    <ul>
+        <li>Period, month(s): @Model.Period</li>
+        <li>Interest Rate, %: @Model.InterestRate</li>
+        <li>Investment Amount, USD: @Model.InvestmentAmount</li>
+        <li>Total Interest, USD: @Model.TotalInterest</li>
+    </ul>
+</fieldset>
+
